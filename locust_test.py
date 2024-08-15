@@ -8,6 +8,7 @@ class WebsiteUser(HttpUser):
 
     @task
     def get_userinfo(self):
+
         self.client.get("/v2/user/hasankselek")
 
     @task
@@ -22,6 +23,7 @@ class WebsiteUser(HttpUser):
 
     @task
     def get_user_logout(self):
+
         self.client.get("/v2/user/logout")
 
     @task
@@ -31,6 +33,7 @@ class WebsiteUser(HttpUser):
 
     @task
     def delete_user(self):
+
         self.client.post("/v2/user", json=Data.user_create_payload())
         self.client.delete("/v2/user/hasankselek")
 
